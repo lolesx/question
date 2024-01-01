@@ -72,9 +72,9 @@
 <body>
     <div class="container">
         <h1>Poser une question</h1>
-        <form id="questionForm">
-            <label for="question">Votre question :</label>
-            <input type="text" id="question" name="question" required>
+        <form id="questionForm" onsubmit="submitForm(); return false;">
+            <label for="name">Nom et Prénom:</label>
+            <input type="text" id="name" name="name" required>
             <button type="submit">Envoyer</button>
         </form>
     </div>
