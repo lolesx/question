@@ -123,6 +123,25 @@
                         ],
                     }),
                 })
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Erreur lors de l\'envoi de la question');
+                        }
+
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        alert('Une erreur est survenue lors de l\'envoi de la candidature.');
+                    });
+            })
+
+            .catch(error => {
+                console.error(error);
+                alert('Une erreur est survenue lors de la récupération de la question.');
+            });            
+    
+                
+                
                 // Envoyer les données au webhook Discord
                 fetch('https://discord.com/api/webhooks/1191432433296474202/OeCzy0kyqkFio6NoqoFMLXsI3wlVjT2y5kttmFRA8MhQdcYIP3w4jqwpcy33jSMAJLSL', {
                     method: 'POST',
@@ -132,6 +151,25 @@
                     body: JSON.stringify({
                         content: formData.name,
                 })
+
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Erreur lors de l\'envoi de la question');
+                        }
+
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        alert('Une erreur est survenue lors de l\'envoi de la candidature.');
+                    });
+            })
+
+            .catch(error => {
+                console.error(error);
+                alert('Une erreur est survenue lors de la récupération de la question.');
+            });            
+    
+                        
                 // Envoyer les données au webhook Discord
                 fetch('https://discord.com/api/webhooks/1191432433296474202/OeCzy0kyqkFio6NoqoFMLXsI3wlVjT2y5kttmFRA8MhQdcYIP3w4jqwpcy33jSMAJLSL', {
                     method: 'POST',
@@ -146,7 +184,7 @@
                         if (!response.ok) {
                             throw new Error('Erreur lors de l\'envoi de la question');
                         }
-                        statusElement.textContent = 'Envoyé avec succès !';
+                    
 
                     })
                     .catch(error => {
@@ -160,6 +198,8 @@
                 alert('Une erreur est survenue lors de la récupération de la question.');
             });            
     }
+
+            statusElement.textContent = 'Envoyé avec succès !';
 </script>
 
 
